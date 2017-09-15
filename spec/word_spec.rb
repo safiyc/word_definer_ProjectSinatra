@@ -12,6 +12,7 @@ describe("#Word") do
 
   describe("#save") do
     it("saves Word instances to a list in the class variable called @@words") do
+      Word.clear
       word1 = Word.new({:word=> "Alibi"})
       word2 = Word.new({:word=> "Busted"})
       word1.save
