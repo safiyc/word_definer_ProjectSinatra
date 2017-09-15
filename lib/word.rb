@@ -1,10 +1,13 @@
+require './lib/definition'
+
 class Word
   @@words = []
   attr_reader :id
-  attr_accessor :word
+  attr_accessor :word, :definition
 
   def initialize (attributes)
     @word = attributes.fetch(:word)
+    @definition = Definition.new
     @id = @@words.length + 1
   end
 

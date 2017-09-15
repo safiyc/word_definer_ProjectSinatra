@@ -27,3 +27,8 @@ post('/clear') do
   @list = Word.all
   erb(:words)
 end
+
+get('/words_id/:id') do
+  @word = Word.find(params[:id])
+  erb(:word)
+end

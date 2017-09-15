@@ -1,21 +1,24 @@
-<h2>Welcome to Your Words!</h2>
+<h1>Welcome to Your Words!</h1>
 
 <h4>Enter a word and click 'Add Word' to add it to your list of words:</h4>
+
+
 <form action="/" method="post">
   <div class="form-group">
     <input name="word" id="word" class="form-control"
     type="text">
   </div>
+  <h5><%= @blank_field_error %></h5>
   <button type="submit" class="btn">Add Word!</button>
 </form>
 
-<h4>Words:</h4>
+
+<h3>Words:</h3>
 <% @list.each do |word| %>
-    <h5><%= word.word%></h5>
+    <h4><a href='/word/<%= word.id %>'><%= word.word %></a></h4>
 <% end %>
+
 
 <form action="/clear" method="post">
   <button type="submit" class="btn">Clear List!</button>
 </form>
-
-<h2><%= @blank_field_error %></h2>

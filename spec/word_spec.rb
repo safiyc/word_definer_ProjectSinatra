@@ -4,7 +4,7 @@ require 'pry'
 
 describe("#Word") do
   describe("#word") do
-    it("checks for the value of the Word instance within the attributes hash") do
+    it("checks for the value of the 'word' instance, which contains the attriubutes hash, of 'Word' class") do
       word1 = Word.new({:word=> "Alibi"})
       expect(word1.word()).to(eq("Alibi"))
     end
@@ -46,7 +46,7 @@ describe("#Word") do
   end
 
   describe("#find") do
-    it("finds a word by inputting its id") do
+    it("finds a word based on its id") do
       Word.clear
       word1 = Word.new({:word=> "Alien"})
       word1.save
