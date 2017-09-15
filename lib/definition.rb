@@ -1,7 +1,20 @@
-class Definition
-  attr_accessor :define
+class Word_Definition
+#   @@definitions = []
+  attr_accessor :definition
 
-  def initialize
-    @define
+  def initialize (attributes)
+    @definition = attributes.fetch(:definition)
   end
+#
+#   def save
+#     @@definitions.push(self)
+#   end
+#
+#   def self.all
+#     @@definitions
+#   end
+#
+#   def self.clear
+#     @@definitions = []
+#   end
 end
