@@ -9,8 +9,9 @@
   <button type="submit" class="btn">Add Word!</button>
 </form>
 
+<h4>Words:</h4>
 <% @list.each do |word| %>
-    <h4>Word: <%= word.word%></h4>
+    <h5><%= word.word%></h5>
 <% end %>
 
 <form action="/clear" method="post">

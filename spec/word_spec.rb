@@ -35,13 +35,24 @@ describe("#Word") do
   end
 
   describe("#id") do
-  it("increments an id by 1 each time a new item is added") do
-    word1 = Word.new({:word=> "Alien"})
-    word1.save
-    word2 = Word.new({:word=> "Bundle"})
-    word2.save
-    expect(word1.id()).to(eq(1))
-    expect(word2.id()).to(eq(2))
+    it("increments the id by 1 of a word that is added") do
+      word1 = Word.new({:word=> "Alien"})
+      word1.save
+      word2 = Word.new({:word=> "Bundle"})
+      word2.save
+      expect(word1.id()).to(eq(1))
+      expect(word2.id()).to(eq(2))
+    end
   end
-end
+
+  describe("#find") do
+    it("finds a word by inputting its id") do
+      Word.clear
+      word1 = Word.new({:word=> "Alien"})
+      word1.save
+      word2 = Word.new({:word=> "Bundle"})
+      word2.save
+      expect(Word.find(2)).to(eq(word2))
+    end
+  end
 end

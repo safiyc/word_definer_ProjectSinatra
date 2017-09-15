@@ -8,7 +8,7 @@ describe('words in list', {:type=> :feature}) do
     visit('/')
     fill_in('word', :with=> 'Apple')
     click_button('Add Word')
-    expect(page).to have_content('Word: Apple')
+    expect(page).to have_content('Apple')
   end
 
   it('processes the user entries and displays words') do
@@ -17,8 +17,8 @@ describe('words in list', {:type=> :feature}) do
     click_button('Add Word!')
     fill_in('word', :with=> 'Banana')
     click_button('Add Word!')
-    expect(page).to have_content('Word: Apple')
-    expect(page).to have_content('Word: Banana')
+    expect(page).to have_content('Apple')
+    expect(page).to have_content('Banana')
   end
 
   it('displays error message when clicking "Add Word!" with an empty input field.') do
