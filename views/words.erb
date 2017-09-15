@@ -1,0 +1,18 @@
+<h2>Welcome to Your Words!</h2>
+
+<h4>Enter a word and click 'Add Word' to add it to your list of words:</h4>
+<form action="/" method="post">
+  <div class="form-group">
+    <input name="word" id="word" class="form-control"
+    type="text">
+  </div>
+  <button type="submit" class="btn">Add Word!</button>
+</form>
+
+<% @list.each do |word| %>
+    <h4>Word: <%= word.word%></h4>
+<% end %>
+
+<form action="/clear" method="post">
+  <button type="submit" class="btn">Clear List!</button>
+</form>

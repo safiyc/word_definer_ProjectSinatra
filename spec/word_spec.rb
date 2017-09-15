@@ -24,8 +24,10 @@ describe("#Word") do
     it("clears the list inside @@contacts") do
       word1 = Word.new({:word=> "Alibi"})
       word2 = Word.new({:word=> "Busted"})
+      word3 = Word.new({:word=> "Criminal"})
       word1.save
       word2.save
+      word3.save
       Word.clear
       expect(Word.all).to(eq([]))
     end
