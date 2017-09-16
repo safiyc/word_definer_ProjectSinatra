@@ -37,4 +37,15 @@ describe("#Word") do
       expect(Word.all()).to(eq([]))
     end
   end
+
+  describe("#id") do
+    it("increments the id by 1 of a word that is added") do
+      word1 = Word.new({:word=> "Blue", :word_definition=> "A color"})
+      word1.save
+      word2 = Word.new({:word=> "Answer", :word_definition=> "The solution to a problem"})
+      word2.save
+      expect(word1.id()).to(eq(1))
+      expect(word2.id()).to(eq(2))
+    end
+  end
 end
