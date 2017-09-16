@@ -5,7 +5,7 @@ class Word
 
   def initialize (attributes)
     @word = attributes.fetch(:word)
-    @word_definition = attributes.fetch(:word_definition)
+    @word_definition = [attributes.fetch(:word_definition)]
     @id = @@words.length + 1
   end
 
