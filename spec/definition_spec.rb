@@ -1,5 +1,17 @@
-#
-  #
+require 'rspec'
+require 'word'
+require 'definition'
+require 'pry'
+
+describe("#Definition") do
+  describe("#word_definition") do
+    it("checks for the value of the instance 'definition' of the class 'Definition', which is an instance 'word_definition' of class 'Word'") do
+      word1 = Word.new({:word=> "Answer"})
+      word1.word_definition.definition = "The solution to a problem"
+      expect(word1.word_definition.definition).to(eq("The solution to a problem"))
+    end
+  end
+
   # describe("#save") do
   #   it("checks for the value of the instance 'define' of the class 'Definition', which is an instance 'definition' of class 'Word'") do
   #     Word.clear
@@ -13,7 +25,7 @@
   #     expect(word2.definition.define).to(eq("To stop"))
   #   end
   # end
-  #
+
   # describe(".clear") do
   #   it("clears words and definitions") do
   #     word1 = Word.new({:word=> "Answer"})
@@ -27,4 +39,4 @@
   #     expect(word2.definition.define).to(eq(""))
   #   end
   # end
-# end
+end
