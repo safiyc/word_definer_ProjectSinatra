@@ -48,4 +48,15 @@ describe("#Word") do
       expect(word2.id()).to(eq(2))
     end
   end
+
+  describe("#find") do
+    it("finds a word based on its id") do
+      Word.clear
+      word1 = Word.new({:word=> "Answer", :word_definition=> "The solution to a problem"})
+      word1.save
+      word2 = Word.new({:word=> "Tired", :word_definition=> "The result of spending a whole day figuring out coding errors"})
+      word2.save
+      expect(Word.find(2)).to(eq(word2))
+    end
+  end
 end
