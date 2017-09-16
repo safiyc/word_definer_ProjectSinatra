@@ -28,7 +28,7 @@ post('/clear') do
   erb(:words)
 end
 
-get('/words_id/:id') do
+get('/words/:id') do
   @word = Word.find(params[:id])
   erb(:word)
 end

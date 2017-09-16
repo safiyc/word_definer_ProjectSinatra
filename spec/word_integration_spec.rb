@@ -27,11 +27,14 @@ describe('words in list', {:type=> :feature}) do
     click_button('Add Word!')
     expect(page).to have_content("Please enter a word.")
   end
+end
 
-  it('displays error message when clicking "Add Word!" with an empty input field.') do
+describe('definition page', {:type=> :feature}) do
+  it('displays clicked word on new page.') do
     visit('/')
-    fill_in('word', :with=> '')
+    fill_in('word', :with=> 'Word1')
     click_button('Add Word!')
-    expect(page).to have_content("Please enter a word.")
+    click_on('Word1')
+    expect(page).to have_content("Word1")
   end
 end
